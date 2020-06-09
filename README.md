@@ -66,3 +66,6 @@ https://xd.adobe.com/view/2ac44014-8a93-4f1e-4479-5d92d977eb3e-5cf5/
 * capistrano-rails
 * capistrano-rbenv
 * capistrano3-unicorn
+* ransack
+* simple_form
+* bcrypt
