@@ -12,3 +12,4 @@ class CreateFavorites < ActiveRecord::Migration[5.2]
     add_index :favorites, [:follower_id, :followed_id], unique: true
   end
 end
+
