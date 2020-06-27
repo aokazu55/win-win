@@ -48,6 +48,7 @@
 
 							<% if @service.user.id == current_user.id %>
 							<%= link_to "Editing Service", edit_service_path(@service), class: "button is-danger" %>
+							<%= link_to "Destroying Service", edit_service_path(@service), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-success" %>
 							<% end %>
 						</div>
 					</div>
@@ -100,7 +101,7 @@
 						</p>
 					</div>
 					<% @user ||= current_user %>
-					<div class="stats-service-show">
+					<div class="stats-servce-show">
 						<strong id="followers" class="stat">
 							<%= @user.followers.count %>
 						</strong>

@@ -20,24 +20,22 @@
 					</div>
 
 					<div class="column is-8">
-						<table class="table is-full-width">
+						<table class="table is-fullwidth">
 							<tr>
 								<td class="is-size-4">
 									<strong><%= @user.name %></strong>
 								</td>
 								<% if @user.id == current_user.id %>
-									<td class="is-size-4">
-										<%= @user.email %>
-									</td>
-									<td>
-										<%= link_to "edit_user_information", edit_user_path(current_user), class: "button is-info" %>
-									</td>
+								<td class="is-size-4">
+									<%= @user.email %>
+								</td>
+								<td>
+									<%= link_to "edit_user_information", edit_user_path(current_user), class: "button is-info" %>
+								</td>
 								<% end %>
-								<% if @user.id != current_user.id %>
-									<td class="follow_form">
-										<%= render 'follow_form' %>
-									</td>
-								<% end %>
+								<td class="follow_form">
+									<%= render 'follow_form' %>
+								</td>
 							</tr>
 						</table>
 						<section class="stats">
@@ -65,7 +63,7 @@
 								Nickname：<%= profile.nickname %>
 							</div>
 							<div class="profile-content">
-								Personality：<%= profile.personality.name %>
+								Personality：<%= profile.personality_id.name %>
 							</div>
 							<div class="profile-content">
 								SpecialSkill：<%= profile.special_skill.name %>
@@ -84,18 +82,18 @@
 							</div>
 
 							<% if @user.id == current_user.id %>
-								<%= link_to edit_profile_path(profile), class: "panel-block" do %>
-								<span class="panel-icon">
-									<i class="fas fa-edit"></i>
-								</span>
-								Edit
-								<% end %>
-								<%= link_to profile_path(profile), method: :delete, data: {confirm: "Are you sure?"}, class: "panel-block" do %>
-								<span class="panel-icon">
-									<i class="fas fa-trash"></i>
-								</span>
-								Destroy
-								<% end %>
+							<%= link_to edit_profile_path(profile), class: "panel-block" do %>
+							<span class="panel-icon">
+								<i class="fas fa-edit"></i>
+							</span>
+							Edit
+							<% end %>
+							<%= link_to profile_path(profile), method: :delete, data: {confirm: "Are you sure?"}, class: "panel-block" do %>
+							<span class="panel-icon">
+								<i class="fas fa-trash"></i>
+							</span>
+							Destroy
+							<% end %>
 							<% end %>
 						</div>
 					</div>

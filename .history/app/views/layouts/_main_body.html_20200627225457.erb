@@ -1,10 +1,12 @@
 <div class="submenu column is-2">
-	<% if user_signed_in? %>
-		<p class="greeting">ようこそ!!</p>
-		<div class="current-user-name">
+	<p class="greeting">ようこそ!!</p>
+	<div class="current-user-name">
+		<% if user_signed_in? %>
 		<%= current_user.name %>
-		</div>
-	<% end %>
+		<% else %>
+		<%= current_user %>
+		<% end %>
+	</div>
 
 	<aside class="box menu">
 		<!-- <p class="menu-label">
@@ -16,6 +18,7 @@
 			<li><a href="#">おすすめ<small>@recommendation</small></a></li>
 		</ul> -->
 
+		<% if user_signed_in? %>
 		<p class="menu-label">
 			【 LINK 】
 		</p>
@@ -23,21 +26,19 @@
 			<li>
 				<%= link_to "services", services_path, class: "button is-warning" %>
 			</li>
-			
+
 			<ul>
 				<li>
 					<%= link_to "users", users_path, class: "button is-danger" %>
 				</li>
 			</ul>
-			
-		<% if user_signed_in? %>
+
 			<li>
-				<%= link_to "Create Profile", new_profile_path(current_user), class: "button is-success" %>
+				<%= link_to "Create Profile", new_profile_path(current_user), class: "button is-info" %>
 			</li>
-			
 		</ul>
-		<% end %>
 	</aside>
+	<% end %>
 </div>
 
 <div class="column">

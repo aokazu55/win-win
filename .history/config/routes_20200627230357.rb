@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :profiles
+  resources :profiles, only: [:new, :edit, :show, :create, :destroy]
   resources :favorites, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
 
