@@ -1,4 +1,4 @@
-<!-- <div class="action-header">
+<div class="action-header">
 	<div class="action-name">
 		<p>●　Profiles Index</p>
 	</div>
@@ -34,7 +34,7 @@
 								Nickname：<%= profile.nickname %>
 							</div>
 							<div class="small-content">
-								Gender：<%= profile.gender %>
+								Gender：<%= Profile.find_by(gender[:name]) %>
 							</div>
 							<div class="small-content">
 								Address：<%= profile.address.name %>
@@ -62,4 +62,4 @@
 			<% end %>
 		</div>
 	</div>
-</section> -->
+</section>

@@ -1,0 +1,69 @@
+<div class="action-header">
+	<div class="action-name">
+		<p>● Detail_of_Profile</p>
+	</div>
+</div>
+
+<section class="section">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-3">
+				<div class="card">
+					<div class="card-image">
+						<figure class="image is-4by4">
+							<%= attachment_image_tag @profile.user, :image %>
+						</figure>
+					</div>
+					<div class="card-content">
+						<div class="media">
+							<div class="media-content profile-user-name">
+								<p class="title is-4"><%= @profile.user.name %></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="column is-7">
+				<article class="panel profile-panel">
+					<p class="panel-heading">Profile</p>
+					<div class="panel-block">
+						<p class="control">
+							Nickname：<%= @profile.nickname %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							Date_of_Birth：<%= @profile.date_of_birth %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							Gender：<%= @profile.gender.name %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							Address：<%= @profile.address.name %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							Personality：<%= @profile.personality.name %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							Speciall_Skill：<%= @profile.special_skill.name %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							Introduce：<%= @profile.introduce %>
+						</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+</section>
