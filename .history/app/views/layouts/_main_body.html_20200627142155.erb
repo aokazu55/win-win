@@ -1,0 +1,55 @@
+<div class="submenu column is-2">
+	<p class="greeting">ようこそ!!</p>
+	<div class="current-user-name">
+		<% if user_signed_in? %>
+		<%= current_user.name %>
+		<% else %>
+		<%= current_user %>
+		<% end %>
+	</div>
+
+	<aside class="box menu">
+		<!-- <p class="menu-label">
+			【（仮）おすすめ情報 】
+		</p>
+		<ul class="menu-list">
+			<li><a href="#">売れ筋情報<small>@uresugi</small></a></li>
+			<li><a href="#">喜びの声<small>@voice</small></a></li>
+			<li><a href="#">おすすめ<small>@recommendation</small></a></li>
+		</ul> -->
+
+		<% if user_signed_in? %>
+		<p class="menu-label">
+			【 LINK 】
+		</p>
+		<ul class="menu-list">
+			<li>
+				<%= link_to "services", services_path, class: "button is-warning" %>
+			</li>
+
+			<ul>
+				<li>
+					<%= link_to "users", users_path  %>
+				</li>
+
+				<li>
+					<%= link_to "profiles", profiles_path  %>
+				</li>
+			</ul>
+
+			<li>
+				<%= link_to "Create Profile", new_profile_path(current_user), class: "button is-info" %>
+			</li>
+		</ul>
+	</aside>
+	<% end %>
+</div>
+
+<div class="column">
+	<service class="box media">
+		<div class="media-content">
+			<%= yield %>
+			<%= javascript_pack_tag "application" %>
+		</div>
+	</service>
+</div>
