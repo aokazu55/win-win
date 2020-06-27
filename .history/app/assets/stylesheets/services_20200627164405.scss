@@ -50,18 +50,19 @@
 
 .panel-heading {
 	text-align: center;
-	background-color: #cde7f3;
+	background-color: red($color: #f89ee9);
+	color: white;
 	font-size: 30px;
 }
 
 .panel-service {
-	background-color: rgb(252, 241, 143);
+	background-color: red($color: #f89ee9);
 	padding: 8px 25px;
 	width: 100%;
 }
 
 .panel-price {
-	background-color: rgb(252, 241, 143);
+	background-color: red($color: #f89ee9);
 	padding: 8px 25px;
 	width: 100%;
 }
