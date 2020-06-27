@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'profiles/new'
+  get 'profiles/index'
+  get 'profiles/show'
+  get 'profiles/edit'
   root 'services#index'
 
   devise_for :users,
