@@ -1,0 +1,23 @@
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<%= stylesheet_link_tag 'application', media: 'all'%>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<meta charset="utf-8">
+<script src="https://kit.fontawesome.com/c135f5a922.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script async defer crossorigin="anonymous"
+	src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v7.0&appId=696006411132834&autoLogAppEvents=1"
+	nonce="7u1eXOwL">
+	</script>
+<script type="text/javascript">
+	document.querySelector('.navbar-burger').addEventListener("click", toggleNav);
+
+	function toggleNav() {
+		var nav = document.querySelector('.navbar-menu');
+		if (nav.className == "navbar-menu") {
+			nav.className = "navbar-menu is-active";
+		} else {
+			nav.className = "navbar-menu";
+		}
+	}
+</script>
