@@ -7,8 +7,8 @@ RSpec.describe 'プロフィール機能', type: :model do
 
   describe 'バリデーションテスト' do
     it '「nickname」が空ならバリデーションは通らない' do
-      blank_nickname = Profile.new(nickname: '', date_of_birth: '1981年3月9日', gender_id.name: '男性', address_id: '千葉県', personality_id: '真面目', special_skill_id: '家事', introduce: 'test1')
-      expect(blank_nickname).to be_valid
+      blank_nickname = Profile.new(nickname: '', date_of_birth: '1981年3月9日', gender_id: '男性', address_id: '千葉県', personality_id: '真面目', special_skill_id: '家事', introduce: 'test1')
+      expect(blank_nickname).not_to be_valid
     end
 
     it '「price」が空ならバリデーションは通らない' do

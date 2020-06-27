@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'サービス機能', type: :model do
-  # let!(:user) { User.create(name: "testman", email: "test@test.org", password: "testdesu") }
-  # let!(:service_1) { Service.create(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', remark: 'test11', transportation_expenses: '無料') }
-  # let!(:service_2) { Service.create(main_service_id: '聞く', service_detail_id: 'アイドル', service_name: 'ウンチク', confidence_level_id: '日本で5本の指に入る', price: '10000', working_time: '25', remark: 'test22', transportation_expenses: '2000') }
+  let!(:user) { User.create(name: "testman", email: "test@test.org", password: "testdesu") }
+  let!(:service_1) { Service.create(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', remark: 'test11', transportation_expenses: '無料') }
+  let!(:service_2) { Service.create(main_service_id: '聞く', service_detail_id: 'アイドル', service_name: 'ウンチク', confidence_level_id: '日本で5本の指に入る', price: '10000', working_time: '25', remark: 'test22', transportation_expenses: '2000') }
   
   describe 'バリデーションテスト' do
     it '「main_service_id」が空ならバリデーションは通らない' do

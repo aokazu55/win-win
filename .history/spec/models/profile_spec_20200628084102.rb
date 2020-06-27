@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'プロフィール機能', type: :model do
-  # let!(:user) { User.create(name: "testman", email: "test@test.org", password: "testdesu") }
-  # let!(:profile_1) { Profile.create(nickname: 'ニック', date_of_birth: '1981年3月9日', gender_id: '男性', address_id: '千葉県', personality_id: '真面目', special_skill_id: '家事', introduce: 'test1') }
-  # let!(:profile_2) { Profile.create(nickname: 'ネーム', date_of_birth: '1981年3月10日', gender_id: '女性', address_id: '東京都', personality_id: 'さわやか', special_skill_id: '料理', introduce: 'test2') }
+  let!(:user) { User.create(name: "testman", email: "test@test.org", password: "testdesu") }
+  let!(:profile_1) { Profile.create(nickname: 'ニック', date_of_birth: '1981年3月9日', gender_id: '男性', address_id: '千葉県', personality_id: '真面目', special_skill_id: '家事', introduce: 'test1') }
+  let!(:profile_2) { Profile.create(nickname: 'ネーム', date_of_birth: '1981年3月10日', gender_id: '女性', address_id: '東京都', personality_id: 'さわやか', special_skill_id: '料理', introduce: 'test2') }
 
   describe 'バリデーションテスト' do
     it '「nickname」が空ならバリデーションは通らない' do
-      blank_nickname = Profile.new(nickname: '', date_of_birth: '1981年3月9日', gender_id.name: '男性', address_id: '千葉県', personality_id: '真面目', special_skill_id: '家事', introduce: 'test1')
-      expect(blank_nickname).to be_valid
+      blank_nickname = Profile.new(nickname: '', date_of_birth: '1981年3月9日', gender_id: '男性', address_id: '千葉県', personality_id: '真面目', special_skill_id: '家事', introduce: 'test1')
+      expect(blank_nickname).not_to be_valid
     end
 
     it '「price」が空ならバリデーションは通らない' do
@@ -42,7 +42,7 @@ RSpec.describe 'プロフィール機能', type: :model do
     end
 
     it '「全て」が入力されていればバリデーションは通る' do
-      full_profile = Profile.new(nickname: 'ニック', date_of_birth: '1981年3月9日', gender_id: '男性', address_id: '千葉県', personality_id: '真面目', special_skill_id: '家事', introduce: 'test1')
+      full_profile = Profile.new(nickname: 'ネーム', date_of_birth: '1981年3月10日', gender_id: '女性', address_id: '東京都', personality_id: 'さわやか', special_skill_id: '料理', introduce: 'test2')
       expect(full_profile).to be_valid
     end
 	end
