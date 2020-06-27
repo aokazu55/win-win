@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    models:
+      service: サービス
+      user: ユーザー
+      profile: プロフィール
+      favorite: フォロー
+      like: お気に入り
+    attributes:
+      service:
+        main_service_id: 何をする
+        service_detail_id: どんなサービス
+        service_name: 商品名
+        image_id: 商品イメージ
+        confidence_level_id: 自信レベル
+        price: 価格
+        content: 内容
+        working_time: 所要時間
+        period_start: 提供開始日
+        period_end: 提供終了日
+        estimated_days_required: 必要日数
+        remark: 備考
+        transportation_expenses: 交通費
+      profile:
+        nickname: ニックネーム
+        date_of_birth: 誕生日
+        gender_id: 性別
+        address_id: 住所
+        personality_id: 性格
+        special_skill_id: 特技
+        introduce: 自己紹介
+      favorite:
+        follower_id: フォロワー
+        followed_id: フォロイー
