@@ -15,9 +15,5 @@ module WinWin
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    config.time_zone = 'Tokyo'
-    config.active_record.default_timezone = :local
-    config.action_view.embed_authenticity_token_in_remote_forms = true
-    config.action_view.automatically_disable_submit_tag = false
   end
 end
