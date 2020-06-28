@@ -183,25 +183,24 @@ a {
 }
 
 .pagination {
-	display: inline-block;
-	padding-left: 30px;
+  display: inline-block;
+  padding-left: 30px;
 }
 
 .pagination a {
-	color: white;
-	padding: 8px 22px;
-	text-decoration: none;
-	background-color: rgb(175, 170, 170);
-	border: 1px solid #ddd;
+  color: black;
+  padding: 8px 22px;
+  text-decoration: none;
+  border: 1px solid #ddd; /* Gray */
 
 }
 
 .pagination a:first-child {
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .pagination a:last-child {
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
