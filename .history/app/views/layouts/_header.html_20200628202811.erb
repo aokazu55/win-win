@@ -1,0 +1,63 @@
+<header class="navbar">
+	<nav class="navbar" role="navigation" aria-label="main navigation"></nav>
+	<div class="navbar-brand">
+		<div class="navbar-item">
+			<%= link_to root_path, class: "navbar-item" do %>
+			<h1 class="title is-3" style="font-family: cursive;">win-win!!!!!</h1>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="navbar-item">
+		<div class="nabvar-search">
+			<%= search_form_for @search, url: services_path do |f| %>
+			<%= f.label t('services.Main_Keyword') %>
+			<%= f.text_field :main_service_id_cont, placeholder: 'メインキーワード' %>
+			<%= f.label t('services.Sub_Keyword') %>
+			<%= f.text_field :service_detail_id_cont, placeholder: 'サブキーワード' %>
+			<%= f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc',
+	                                      '出品の新しい順': 'updated_at desc' }, { onchange: 'this.form.submit()'} ) %>
+			<%= f.submit class: 'btn-search' %>
+			<% end %>
+		</div>
+	</div>
+
+	<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+		data-target="navbarBasicExample">
+		<span aria-hidden="true"></span>
+		<span aria-hidden="true"></span>
+		<span aria-hidden="true"></span>
+	</a>
+
+	<% if user_signed_in? %>
+	<div id="navbarBasicExample" class="navbar-menu">
+		<div class="navbar-start">
+			<div class="navbar-item">
+				<%= link_to "サービス投稿", new_service_path, method: :get, class: "button is-info is-rounded" %>
+			</div>
+
+			<div class="navbar-item">
+				<%= link_to "マイページ", user_path(current_user), class: "button is-info is-rounded" %>
+			</div>
+		</div>
+
+		<div class="navbar-end">
+			<div class="navbar-item">
+				<%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-info is-rounded" %>
+			</div>
+		</div>
+	</div>
+
+	<% else %>
+	<div id="navbarBasicExample" class="navbar-menu">
+		<div class="navbar-item">
+			<%= link_to "ログイン", new_user_session_path, class: "button is-info is-rounded" %>
+		</div>
+
+		<div class="navbar-item">
+			<%= link_to "新規登録", new_user_registration_path, class: "button is-info is-rounded" %>
+		</div>
+	</div>
+	<% end %>
+	</nav>
+</header>

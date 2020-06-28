@@ -1,0 +1,232 @@
+<div class="action-header">
+	<div class="action-name">
+		<p>● Editing Service</p>
+	</div>
+
+	<div class="action-detail">
+		<p>・編集したい部分をクリックしましょう。</p>
+		<p>・編集が完了したら投稿をクリックしましょう。</p>
+	</div>
+</div>
+
+<section class="section">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-6">
+				<%= form_for @service do |f| %>
+				<%= render 'shared/error_messages', object: f.object %>
+				<div class="field">
+					<%= f.label :main_service_id, t('services.What_to_do'), class: "label" %>
+					<%= f.select :main_service_id, [
+															["作る", "作る"], 
+															["教える", "教える"], 
+															["教わる", "教わる"], 
+															["一緒に学ぶ", "一緒に学ぶ"], 
+															["手伝う", "手伝う"], 
+															["見る", "見る"], 
+															["聞く", "聞く"], 
+															["話す", "話す"], 
+															["考える", "考える"], 
+															["食べる", "食べる"],
+															["食べさせる", "食べさせる"],  
+															["体験する", "体験する"], 
+															["同行する", "同行する"]], 
+							{prompt: '選択してください'}, class: 'form-control btn-form' %>
+				</div>
+
+				<div class="field">
+					<%= f.label :service_detail_id, t('services.Service_Detail'), class: "label" %>
+					<%= f.select :service_detail_id, [
+															["あいさつ", "あいさつ"], 
+															["アイドル", "アイドル"], 
+															["アウトドア", "アウトドア"], 
+															["アクアリウム", "アクアリウム"], 
+															["アニメ", "アニメ"], 
+															["アプリ", "アプリ"], 
+															["囲碁・将棋", "囲碁・将棋"], 
+															["イラスト", "イラスト"], 
+															["インスタ", "インスタ"], 
+															["インテリア", "インテリア"], 
+															["インドア", "インドア"],
+															["育児", "育児"], 
+															["ウォーキング", "ウォーキング"], 
+															["ウクレレ", "ウクレレ"], 
+															["占い", "占い"], 
+															["絵", "絵"], 
+															["絵本", "絵本"], 
+															["映画", "映画"], 
+															["園芸", "園芸"], 
+															["音楽", "音楽"], 
+															["おしゃれ", "おしゃれ"], 
+															["お笑い", "お笑い"],
+															["かっこいい・カワイイ", "かっこいい・カワイイ"], 
+															["カラオケ", "カラオケ"], 
+															["カメラ", "カメラ"], 
+															["買い物", "買い物"], 
+															["家事", "家事"], 
+															["格闘技", "格闘技"], 
+															["教室", "教室"], 
+															["キャンプ", "キャンプ"], 
+															["ギャンブル", "ギャンブル"], 
+															["筋トレ", "筋トレ"], 
+															["クイズ", "クイズ"], 
+															["靴磨き", "靴磨き"], 
+															["グルメ", "グルメ"], 
+															["競馬", "競馬"], 
+															["研究", "研究"], 
+															["健康", "健康"], 
+															["ゲーム", "ゲーム"], 
+															["語学", "語学"], 
+															["コスプレ", "コスプレ"], 
+															["工作", "工作"], 
+															["サイクリング", "サイクリング"],
+															["裁縫", "裁縫"], 
+															["サウナ", "サウナ"], 
+															["作文", "作文"], 
+															["サバイバル", "サバイバル"], 
+															["資格", "資格"], 
+															["写真", "写真"], 
+															["手芸", "手芸"], 
+															["睡眠", "睡眠"], 
+															["数学", "数学"], 
+															["スポーツ", "スポーツ"], 
+															["整理整頓", "整理整頓"],
+															["説明", "説明"], 
+															["節約", "節約"], 
+															["洗車", "洗車"], 
+															["銭湯", "銭湯"], 
+															["掃除", "掃除"], 
+															["そば打ち", "そば打ち"], 
+															["ソロキャンプ", "ソロキャンプ"], 
+															["食べ歩き", "食べ歩き"], 
+															["ダーツ", "ダーツ"], 
+															["ダンス", "ダンス"],
+															["チャット", "チャット"], 
+															["彫刻", "彫刻"], 
+															["貯金", "貯金"], 
+															["釣り", "釣り"], 
+															["手作り", "手作り"], 
+															["テレビ", "テレビ"], 
+															["転職", "転職"], 
+															["天体観測", "天体観測"], 
+															["洞窟探検", "洞窟探検"], 
+															["登山", "登山"], 
+															["読書", "読書"],
+															["ドライブ", "ドライブ"], 
+															["トランプ", "トランプ"], 
+															["トレーディングカード", "トレーディングカード"], 
+															["ドローン", "ドローン"], 
+															["日記", "日記"], 
+															["日曜大工", "日曜大工"], 
+															["庭いじり", "庭いじり"], 
+															["人間観察", "人間観察"], 
+															["ぬいぐるみ", "ぬいぐるみ"], 
+															["ぬか漬け", "ぬか漬け"], 
+															["塗り絵", "塗り絵"],
+															["ネイル", "ネイル"], 
+															["粘土", "粘土"], 
+															["農業", "農業"], 
+															["花", "花"], 
+															["パソコン", "パソコン"], 
+															["パン作り", "パン作り"], 
+															["ビリヤード", "ビリヤード"], 
+															["ファッション", "ファッション"], 
+															["プラモデル", "プラモデル"], 
+															["ブログ", "ブログ"],
+															["プログラミング", "プログラミング"], 
+															["ペット", "ペット"], 
+															["勉強", "勉強"], 
+															["褒め", "褒め"], 
+															["ホームページ", "ホームページ"], 
+															["ボーリング", "ボーリング"], 
+															["麻雀", "麻雀"], 
+															["マラソン", "マラソン"], 
+															["漫画", "漫画"], 
+															["ミシン", "ミシン"], 
+															["ミュージカル", "ミュージカル"],
+															["メイク", "メイク"], 
+															["名言", "名言"], 
+															["瞑想", "瞑想"], 
+															["迷路", "迷路"], 
+															["ユーチューブ", "ユーチューブ"], 
+															["ヨガ", "ヨガ"], 
+															["ライブ", "ライブ"], 
+															["ラジオ", "ラジオ"], 
+															["ラジコン", "ラジコン"], 
+															["ランニング", "ランニング"], 
+															["料理", "料理"],
+															["旅行", "旅行"], 
+															["ルービックキューブ", "ルービックキューブ"], 
+															["ロボット", "ロボット"], 
+															["論文", "論文"], 
+															["恋愛", "恋愛"], 
+															["和", "和"], 
+															["ワークショップ", "ワークショップ"], 
+															["その他", "その他"]], 
+							{prompt: '選択してください'}, class: 'form-control btn btn-form' %>
+				</div>
+
+				<div class="field">
+					<%= f.label :confidence_level_id, t('services.Confidence_level'), class: "label" %>
+					<%= f.select :confidence_level_id, [
+																["世界で5本の指に入る", "世界で5本の指に入る"], 
+																["日本で5本の指に入る", "日本で5本の指に入る"], 
+																["かなりの自信あり", "かなりの自信あり"], 
+																["プロレベル", "プロレベル"], 
+																["アマチュアでも上手な部類", "アマチュアでも上手な部類"], 
+																["まあまあかな・・・", "まあまあかな・・・"], 
+																["自信はないが頑張ります！", "自信はないが頑張ります！"], 
+																["人には上手と言われますよ。", "人には上手と言われますよ。"], 
+																["始めたばかりで自信はないですが・・・", "始めたばかりで自信はないですが・・・"], 
+																["自信はありません。。", "自信はありません。。"]], 
+							{prompt: '選択してください'}, class: 'form-control btn-form' %>
+				</div>
+
+				<div class="field">
+					<%= f.label :service_name, t('services.Service_Name'), class: "label" %>
+					<%= f.text_field :service_name, class: "input" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :price, t('services.Price'), class: "label" %>
+					<%= f.text_field :price, class: "input" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :working_time, t('services.Working_Time'), class: "label" %>
+					<%= f.text_field :working_time, class: "input" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :remark, t('services.Remark'), class: "label" %>
+					<%= f.text_area :remark, class: "textarea" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :period_start, t('services.Period_Start'), class: "label" %>
+					<%= f.date_select :period_start, include_blank: true, selected: Date.today + 1, class: "input form-control" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :period_end, t('services.Period_End'), class: "label" %>
+					<%= f.date_select :period_end, include_blank: true, selected: Date.today + 2, class: "input form-control" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :transportation_expenses,t('services.Transportation_Expenses'), class: "label" %>
+					<%= f.text_field :transportation_expenses, class: "input" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :image, t('services.Image'), class: "label" %>
+					<%= f.attachment_field :image, class: "control" %>
+				</div>
+
+				<div class="field">
+					<%= f.submit t('services.Update'), class: "button is-info", "data-disable-with" => false %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

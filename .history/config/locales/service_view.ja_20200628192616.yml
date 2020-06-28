@@ -1,0 +1,18 @@
+ja:
+  services:
+    Registration_Service: "サービス登録"
+    What_to_do: "サービス形態"
+    Service_Detail: "サービス種別"
+    Confidence_level: "自信レベル"
+    Service_Name: "サービス名"
+    Price: "お値段"
+    Working_Time: "所要時間"
+    Remark: "備考"
+    Period_Start: "提供開始日"
+    Period_End: '提供終了日'
+    Transportation_Expenses: "交通費"
+    Image: "イメージ画像"
+	Registration: "登録"
+    Services_Index: "サービス一覧"
+    Update: "更新"
+

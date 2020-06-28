@@ -1,0 +1,165 @@
+<div class="action-header">
+	<div class="action-name">
+		<p>●　t('users.User_detail')</p>
+	</div>
+	<div class="action-detail">
+		<p>・確認したい部分をクリックしましょう。</p>
+		<p>・出品者へサービスに関する質問が出来ます。</p>
+	</div>
+</div>
+
+<section class="section">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-8">
+				<div class="columns is-centered">
+					<div class="column is-4">
+						<figure class="image is-128x128" style="margin-left: auto; margin-right: auto;">
+							<%= attachment_image_tag @user, :image, fallback: "no-image.png", class: "image is-rounded" %>
+						</figure>
+					</div>
+
+					<div class="column is-8">
+						<table class="table is-full-width">
+							<tr>
+								<td class="is-size-4">
+									<strong><%= @user.name %></strong>
+								</td>
+								<% if @user.id == current_user.id %>
+									<td class="is-size-4">
+										<%= @user.email %>
+									</td>
+									<td>
+										<%= link_to t('users.edit_user_information'), edit_user_path(current_user), class: "button is-info" %>
+									</td>
+								<% end %>
+								<% if @user.id != current_user.id %>
+									<td class="follow_form">
+										<%= render 'follow_form' %>
+									</td>
+								<% end %>
+							</tr>
+						</table>
+						<section class="stats">
+							<%= render "shared/stats" %>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="action-name">
+	<p>●　Users_Profile</p>
+</div>
+<section class="section">
+	<div class="container">
+		<div class="columns is-multiline">
+			<% @user.profiles.each do |profile| %>
+			<div class="column is-12">
+				<div class="card">
+					<div class="media">
+						<div class="media-content">
+							<div class="profile-content">
+								Nickname：<%= profile.nickname %>
+							</div>
+							<div class="profile-content">
+								Personality：<%= profile.personality.name %>
+							</div>
+							<div class="profile-content">
+								SpecialSkill：<%= profile.special_skill.name %>
+							</div>
+							<div class="profile-content">
+								Personality：<%= profile.date_of_birth %>
+							</div>
+							<div class="profile-content">
+								Gender：<%= profile.gender.name %>
+							</div>
+							<div class="profile-content">
+								Address：<%= profile.address.name %>
+							</div>
+							<div class="profile-content">
+								Introduce：<%= profile.introduce %>
+							</div>
+
+							<% if @user.id == current_user.id %>
+								<%= link_to edit_profile_path(profile), class: "panel-block" do %>
+								<span class="panel-icon">
+									<i class="fas fa-edit"></i>
+								</span>
+								Edit
+								<% end %>
+								<%= link_to profile_path(profile), method: :delete, data: {confirm: "Are you sure?"}, class: "panel-block" do %>
+								<span class="panel-icon">
+									<i class="fas fa-trash"></i>
+								</span>
+								Destroy
+								<% end %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</section>
+
+
+<div class="action-name">
+	<p>●　Services</p>
+</div>
+<section class="section">
+	<div class="container">
+		<div class="columns is-multiline">
+			<% @user.services.each do |service| %>
+			<div class="column is-3">
+				<div class="card">
+					<div class="card-image">
+						<figure class="image is-4by3">
+							<%= link_to service_path(service) do %>
+							<%= attachment_image_tag service, :image, fallback: "no-image.png" %>
+							<% end %>
+						</figure>
+					</div>
+					<div class="card-content">
+						<div class="media">
+							<div class="media-content">
+								<div class="media-service-name">
+									<%= service.service_name %>
+								</div>
+								<div class="media-service-price">
+									<%= service.price.to_s(:delimited, delimiter: ',') %>円
+								</div>
+								<%= link_to service_path(service), class: "panel-block" do %>
+								<span class="panel-icon">
+									<i class="fas fa-book" aria-hidden="true"></i>
+								</span>
+								Check
+								<% end %>
+
+								<% if @user.id == current_user.id %>
+								<%= link_to edit_service_path(service), class: "panel-block" do %>
+								<span class="panel-icon">
+									<i class="fas fa-edit"></i>
+								</span>
+								Edit
+								<% end %>
+
+								<%= link_to service_path(service), method: :delete, data: {confirm: "Are you sure?"}, class: "panel-block" do %>
+								<span class="panel-icon">
+									<i class="fas fa-trash"></i>
+								</span>
+								Destroy
+								<% end %>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</section>

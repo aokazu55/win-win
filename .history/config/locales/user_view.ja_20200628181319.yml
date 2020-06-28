@@ -1,0 +1,25 @@
+ja:
+  users:
+    Users_Index: "ユーザー一覧"
+    Number of Exhibits: "出品数"
+    title: "タイトル"
+    content: "タスク内容"
+    deadline: "完了期限"
+    priority: "優先順位"
+    status: "着手状況"
+    user_id: "ユーザーID"
+    Are_you_sure?: "本当に削除しても良いですか？"
+    Back: '戻る'
+    New Account: "新しいアカウント"
+    logged_in: "Login"
+    error: "エラー"
+    title: "タイトル"
+    content: "タスク内容"
+    deadline: "完了期限"
+    priority: "優先順位"
+    status: "着手状況"
+    user_id: "ユーザーID"
+    Are_you_sure?: "本当に削除しても良いですか？"
+    Back: '戻る'
+    New Account: "新しいアカウント"
+    logged_in: "Login"

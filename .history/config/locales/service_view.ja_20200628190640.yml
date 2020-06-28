@@ -1,0 +1,28 @@
+ja:
+  services:
+    Users_Index: "ユーザー一覧"
+    User_detail: "ユーザー詳細情報"
+    Number_of_Exhibits: "出品数"
+    edit_user_information: "ユーザー情報編集"
+    Users_Profile: "プロフィール"
+    Services: "出品サービス"
+    Editing_User: "ユーザー編集"
+    Users_Profile: "プロフィール"
+    Nickname: "ニックネーム"
+    Personality: '性格'
+    SpecialSkill：: "特技"
+    Date_of_Birth: "誕生日"
+    Gender: "性別"
+    Address: "住所"
+    Introduce: "自己紹介"
+    Edit_Profile: 'プロフィール編集'
+    Destroy_Profile: "プロフィール削除"
+    Check_Service: "サービス確認"
+    Edit_Service: "サービス編集"
+    Destroy_Service: "サービス削除"
+    User_Name: "お名前"
+    Email: "メールアドレス"
+    User_Image: "イメージ画像"
+    Update: "更新"
+    Unfollow: "フォローを外す"
+    follow: "フォローする"

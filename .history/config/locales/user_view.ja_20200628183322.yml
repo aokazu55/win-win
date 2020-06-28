@@ -1,0 +1,24 @@
+ja:
+  users:
+    Users_Index: "ユーザー一覧"
+    User_detail: "ユーザー詳細情報"
+    Number_of_Exhibits: "出品数"
+    edit_user_information: "ユーザー情報編集"
+	Users_Profile: "プロフィール"
+    Services: "出品サービス"
+    Editing_User: "ユーザー編集"
+    Are_you_sure?: "本当に削除しても良いですか？"
+    Back: '戻る'
+    New Account: "新しいアカウント"
+    logged_in: "Login"
+    error: "エラー"
+  profiles:
+    content: "タスク内容"
+    deadline: "完了期限"
+    priority: "優先順位"
+    status: "着手状況"
+    user_id: "ユーザーID"
+    Are_you_sure?: "本当に削除しても良いですか？"
+    Back: '戻る'
+    New Account: "新しいアカウント"
+    logged_in: "Login"

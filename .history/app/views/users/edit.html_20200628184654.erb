@@ -1,0 +1,48 @@
+<% if @user.errors.any? %>
+<div class="notification is-danger">
+	<h2><%= pluralize(@user.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+	<ul>
+		<% @user.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="action-header">
+	<div class="action-name">
+		<p><%= t('users.Editing_User') %></p>
+	</div>
+
+	<div class="action-detail">
+		<p>・編集したい部分をクリックし入力しましょう。</p>
+		<p>・編集が完了したら投稿をクリックしましょう。</p>
+	</div>
+</div>
+
+<section class="section">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-6">
+				<%= form_for @user do |f| %>
+				<div class="field">
+					<%= f.label :name, "User_Name", class: "label" %>
+					<%= f.text_field :name, class: "input" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :email, "Email", class: "label" %>
+					<%= f.email_field :email, class: "input" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :image, "User_Image", class: "label" %>
+					<%= f.attachment_field :image, class: "control" %>
+				</div>
+
+				<%= f.submit "更新", class: "button is-info" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>

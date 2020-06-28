@@ -1,0 +1,117 @@
+<div class="action-header">
+	<div class="action-name">
+		<p>● <%= t('services.Service_Detail') %></p>
+	</div>
+
+	<div class="action-detail">
+		<p>・各サービス情報をクリックし閲覧しましょう。</p>
+		<p>・気になるサービスはウォッチリストへ追加しましょう。</p>
+		<p>・出品者へサービスに関する質問が出来ます。</p>
+	</div>
+</div>
+
+<section class="section">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-5">
+				<div class="card">
+					<div class="card-image">
+						<figure class="image is-4by4">
+							<%= attachment_image_tag @service, :image, fallback: "no-image.png", class: "image"  %>
+						</figure>
+					</div>
+					<div class="card-content">
+						<div class="media">
+							<div class="panel panel-service">
+								<p class="title is-3 service-title-show"><%= t('services.How_to_do') %>：<%= @service.main_service_id %></p>
+								<p class="title is-5 service-title-show"><%= t('services.What_to_do') %>：<%= @service.service_detail_id %>
+								</p>
+								<p class="title is-6 service-title-show"><%= @service.service_name %></p>
+							</div>
+						</div>
+						<div class="media">
+							<div class="panel panel-price">
+								<p class="title is-4 service-title-show">
+									<%= t('services.Price') %>：<%= @service.price.to_s(:delimited, delimiter: ',') %>円</p>
+							</div>
+						</div>
+
+						<div class="content">
+							<table class="table is-narrow">
+								<tr>
+									<i class="fas fa-info-circle">：<%= t('services.Remark') %></i>
+								</tr>
+								<tr>
+									<td><%= simple_format @service.remark %></td>
+								</tr>
+							</table>
+
+							<% if @service.user.id == current_user.id %>
+							<%= link_to "Editing Service", edit_service_path(@service), class: "button is-info" %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="column is-6">
+				<article class="panel">
+					<p class="panel-heading">
+						<%= t('services.Detail') %>
+					</p>
+					<div class="panel-block">
+						<p class="control">
+							<%= t('services.Recommended_Degree') %>：<%= @service.confidence_level_id %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							<%= t('services.Time_Required') %>：<%= @service.working_time %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							<%= t('services.Period_Start') %>：<%= @service.period_start %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							<%= t('services.Period_End') %>：<%= @service.period_end %>
+						</p>
+					</div>
+					<div class="panel-block">
+						<p class="control">
+							<%= t('services.Transportation_Expenses') %>：<%= @service.transportation_expenses %>
+						</p>
+					</div>
+					<%= render 'shared/like' %>
+				</article>
+
+				<article class="panel show-user-info">
+					<p class="panel-heading">
+						<%= t('services.Provider_Information') %>
+					</p>
+					<figure class="image is-5by5">
+						<%= attachment_image_tag @service.user, :image, fallback: "no-image.png", class: "image"  %>
+					</figure>
+					<div class="panel-block">
+						<p class="control">
+							<%= t('services.Provider') %>：<%= @service.user.name %>
+						</p>
+					</div>
+					<% @user ||= current_user %>
+					<div class="stats-service-show">
+						<strong id="followers" class="stat">
+							<%= @user.followers.count %>
+						</strong>
+						<%= t('services.follower') %> |
+						<strong id="liked" class="liked">
+							<%= @user.likes.count %>
+						</strong>
+						<%= t('services.Liked') %>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+</section>

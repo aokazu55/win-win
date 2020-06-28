@@ -1,0 +1,31 @@
+ja:
+  users:
+    _form:
+      Task_create: "タスクを登録しましょう。"
+      error: "エラー"
+      title: "タイトル"
+      content: "タスク内容"
+      deadline: "完了期限"
+      priority: "優先順位"
+      status: "着手状況"
+      user_id: "ユーザーID"
+      Are_you_sure?: "本当に削除しても良いですか？"
+    new:
+      Back: '戻る'
+      New Account: "新しいアカウント"
+      logged_in: "Login"
+    show:
+      New_User: "新規ユーザー"
+      users.new.back: "戻る"
+      Edit: "編集"
+      Destroy: "削除"
+    show:
+      New_User: "新規ユーザー"
+      users.new.back: "戻る"
+      Edit: "編集"
+	  Destroy: "削除"
+    edit:
+      New_User: "新規ユーザー"
+      users.new.back: "戻る"
+      Edit: "編集"
+      Destroy: "削除"

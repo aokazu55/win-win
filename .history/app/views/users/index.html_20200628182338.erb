@@ -1,0 +1,48 @@
+<div class="action-header">
+	<div class="action-name">
+		<p>●　ユーザー一覧</p>
+	</div>
+
+	<div class="action-detail">
+		<p>・プライバシー保護のため、閲覧可能な情報を制限しています。</p>
+		<p>・気になるユーザーをお気に入り登録しましょう。</p>
+	</div>
+</div>
+
+<section class="section">
+	<div class="container">
+		<div class="columns is-multiline">
+			<% @users.each do |user| %>
+			<div class="column is-3">
+				<div class="card">
+
+					<div class="card-content">
+						<div class="card-image">
+							<figure class="image">
+								<%= link_to user_path(user) do %>
+								<%= attachment_image_tag user, :image, fallback: "no-image.png" %>
+								<% end %>
+							</figure>
+						</div>
+					</div>
+
+					<div class="card-content">
+						<div class="media">
+							<div class="media-content">
+								<div class="title"><%=link_to user.name, user_path(user) %></div>
+							</div>
+						</div>
+						<div class="content">
+							<%= t('users.Number_of_Exhibits') %>：<%= user.services.count %>
+						</div>
+
+						<section class="stats">
+							<%= render 'shared/stats' %>
+						</section>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</section>
