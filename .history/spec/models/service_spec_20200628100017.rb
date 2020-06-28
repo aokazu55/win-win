@@ -12,37 +12,38 @@ RSpec.describe 'サービス機能', type: :model do
     end
 
     it '「service_detail_id」が空ならバリデーションは通らない' do
-      blank_service_detail_id = Service.new(main_service_id: '教える', service_detail_id: '', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料', user_id: '1')
+      blank_service_detail_id = Service.new(main_service_id: '教える', service_detail_id: '', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料')
       expect(blank_service_detail_id).not_to be_valid
     end
 
     it '「service_name」が空ならバリデーションは通らない' do
-      blank_service_name = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: '', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料', user_id: '1')
+      blank_service_name = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: '', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料')
       expect(blank_service_name).not_to be_valid
+      #マイグレーションファイル変更しないと多分解消されない
     end
 
     it '「price」が空ならバリデーションは通らない' do
-      blank_price = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料', user_id: '1')
+      blank_price = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料')
       expect(blank_price).not_to be_valid
     end
 
     it '「working_time」が空ならバリデーションは通らない' do
-      blank_working_time = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料', user_id: '1')
+      blank_working_time = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料')
       expect(blank_working_time).not_to be_valid
     end
 
     it 'confidence_level_id' do
-      blank_confidence_level_id = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料', user_id: '1')
+      blank_confidence_level_id = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料')
       expect(blank_confidence_level_id).not_to be_valid
     end
 
     it '「remark」が空ならバリデーションは通らない' do
-      blank_remark = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: '', transportation_expenses: '無料', user_id: '1')
+      blank_remark = Service.new(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: '', transportation_expenses: '無料')
       expect(blank_remark).not_to be_valid
 	end
 
     it 'period_start,period_end,image_id以外すべてに内容が入力されていればバリデーションは通る' do
-      full_service = Service.create(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料', user_id: '1')
+      full_service = Service.create(main_service_id: '教える', service_detail_id: 'あいさつ', service_name: 'おはよう', confidence_level_id: '世界で5本の指に入る', price: '100', working_time: '2', working_time: '2', period_start: '2030-6-29', period_end: '20-6-29', remark: 'test11', transportation_expenses: '無料')
       expect(full_service).not_to be_valid
     end
   end
