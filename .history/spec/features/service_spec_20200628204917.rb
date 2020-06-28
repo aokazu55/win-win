@@ -54,6 +54,7 @@ RSpec.describe 'サービス機能', type: :system do
 		context 'サービスを作成した場合' do
 			it '一覧画面で作成済みのタスクが表示されること' do
 				visit services_path
+				byebug
 				expect(page).to have_content '教える'
 				expect(page).to have_content 'あいさつ'
 				expect(page).to have_content 'おはよう'
