@@ -23,12 +23,12 @@ RSpec.describe 'サービス機能', type: :model do
     end
 
     it '「image」が空でもバリデーションは通る' do
-      blank_user_password_confirmation = User.new(name: 'test', email: 'test@test.com', password: 'testdesu', password_confirmation: 'testdesu', image_id: '')
-      expect(blank_user_password_confirmation).to be_valid
+      blank_user_password_confirmation = User.new(name: 'test', email: 'test@test.com', password: 'testdesu', password_confirmation: '', image_id: '')
+      expect(blank_user_password_confirmation).not_to be_valid
     end
 
-    it 'image以外ユーザー情報全てが入力されていて、かつ、パスワードが一致していればバリデーションは通る' do
-      full_user = User.new(name: 'test', email: 'test@test.com', password: 'testdesu', password_confirmation: 'testdesu', image_id: '')
+    it 'ユーザー情報全てが入力されているならバリデーションは通る' do
+      full_user = User.new(name: 'test', email: 'test@test.com', password: 'testdesu', password_confirmation: 'testdesu')
       expect(full_user).to be_valid
     end
   end
