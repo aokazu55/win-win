@@ -176,8 +176,7 @@ a {
 	font-weight: bold;
 }
 
-.notification {
-	font-weight: bold;
-	background-color: rgb(175, 170, 170);
-	color: white;
+.flash-notice {
+	margin: 2px 15px;
+	background-color: green($color: #000000);
 }

@@ -44,17 +44,17 @@
 	<service class="box media">
 		<div class="media-content">
 			<% if flash[:notice] %>
-				<div class="notification">
+				<div class="notification is-info">
 					<p class="notice"><%= notice %></p>
 				</div>
 			<% end %>
 			
 			<% if flash[:alert] %>
-				<div class="notification">
+				<div class="notification is-danger">
 					<p class="alert"><%= alert %></p>
 				</div>
 			<% end %>
-
+			
 			<%= yield %>
 			<%= javascript_pack_tag "application" %>
 		</div>
