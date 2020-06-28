@@ -72,14 +72,13 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    following_ids = "SELECT followed_id FROM favorites
+    following_ids = "SELECT followed_id FROM relationships
                     WHERE follower_id = :user_id"
-    Service.where("user_id IN (#{following_ids})
+    Micropost.where("user_id IN (#{following_ids})
                     OR user_id = :user_id", user_id: id)
-  end
 
   def follow(other_user)
-    active_favorites.create(followed_id: other_user.id)
+    active_relationships.create(followed_id: other_user.id)
   end
 
 end

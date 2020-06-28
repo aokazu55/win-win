@@ -1,0 +1,17 @@
+<div class="panel-block">
+	<% if @service.user_id != current_user.id %>
+	<% if @like.present? %>
+	<%= link_to 'quit_like_list', like_path(id: @like.id), method: :delete, class: "button btn-like", style: "background-color:#ca4837; color:white; border: none;" %>
+	<% else %>
+	<%= link_to 'add_like_list', likes_path(service_id: @service.id), method: :post, class: "button btn-like", style: "background-color:#eed66d; color:black; border: none;" %>
+	<% end %>
+	<% end %>
+</div>
+<div class="panel-block">
+	<p class="like-user">ウォッチャー：</p>
+	<p class="like-user-name">
+		<% @likes.each do |like| %>
+		<%= like.name %>
+		<% end %>
+	</p>
+</div>
