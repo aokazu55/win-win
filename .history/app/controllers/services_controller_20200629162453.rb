@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_service, only: [:show, :edit, :update]
   PER = 12
 
@@ -22,6 +22,9 @@ class ServicesController < ApplicationController
     end
 
     def show
+    end
+
+    def like_show
       @like = current_user.likes.find_by(service_id: @service.id)
       @likes= @service.like_users
     end

@@ -7,13 +7,11 @@
 		<% end %>
 	<% end %>
 </div>
-	<% if @user_signed_in %>
 <div class="panel-block">
 	<p class="like-user">サービスフォロワー：</p>
 	<p class="like-user-name">
 		<% @likes.each do |like| %>
 		<%= like.name %>
 		<% end %>
-	<% end %>
 	</p>
 </div>
