@@ -8,8 +8,8 @@ RSpec.describe 'サービス機能', type: :system do
 		context '必要項目を入力して、サインインボタンを押した場合' do
 			it 'ログインされること' do
 				visit new_user_session_path
-				fill_in 'user[email]', with: 'testman@test.com', match: :first
-				fill_in 'user[password]', with: "testdesu", match: :first
+				fill_in 'user[email]', with: 'testman@test.com'
+				fill_in 'user[password]', with: "testdesu"
 				click_on 'ログイン', match: :first
 				byebug
 				visit services_path

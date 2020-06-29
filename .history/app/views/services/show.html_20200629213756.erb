@@ -44,9 +44,6 @@
 								<tr>
 									<td><%= simple_format @service.remark %></td>
 								</tr>
-								<tr>
-									<td><%= render 'shared/like' %></td>
-								</tr>
 							</table>
 
 							<% if @service.user.id == current_user.id %>
@@ -85,6 +82,7 @@
 					<div class="panel-block">
 						<p class="control">
 							<%= t('services.Transportation_Expenses') %>：<%= @service.transportation_expenses %>
+							<%= render 'shared/like' %>
 						</p>
 					</div>
 				</article>

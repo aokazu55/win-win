@@ -44,14 +44,12 @@
 								<tr>
 									<td><%= simple_format @service.remark %></td>
 								</tr>
-								<tr>
-									<td><%= render 'shared/like' %></td>
-								</tr>
 							</table>
 
 							<% if @service.user.id == current_user.id %>
 							<%= link_to t('services.Editing＿Service'), edit_service_path(@service), class: "button is-info" %>
 							<% end %>
+							<%= render 'shared/like' %>
 						</div>
 					</div>
 				</div>
@@ -84,7 +82,7 @@
 					</div>
 					<div class="panel-block">
 						<p class="control">
-							<%= t('services.Transportation_Expenses') %>：<%= @service.transportation_expenses %>
+							<%= t('services.Transportation_Expenses') %>：<%= @service.transportation_expenses %>							
 						</p>
 					</div>
 				</article>

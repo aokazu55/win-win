@@ -44,9 +44,6 @@
 								<tr>
 									<td><%= simple_format @service.remark %></td>
 								</tr>
-								<tr>
-									<td><%= render 'shared/like' %></td>
-								</tr>
 							</table>
 
 							<% if @service.user.id == current_user.id %>
@@ -87,33 +84,34 @@
 							<%= t('services.Transportation_Expenses') %>：<%= @service.transportation_expenses %>
 						</p>
 					</div>
-				</article>
-
-				<article class="panel show-user-info">
-					<p class="panel-heading">
-						<%= t('services.Provider_Information') %>
-					</p>
-					<figure class="image is-5by5">
-						<%= attachment_image_tag @service.user, :image, fallback: "no-image.png", class: "image"  %>
-					</figure>
-					<div class="panel-block">
-						<p class="control">
-							<%= t('services.Provider') %>：<%= @service.user.name %>
+					<%= render 'shared/like' %>
+		
+					<article class="panel show-user-info">
+						<p class="panel-heading">
+							Provider_Infomation
 						</p>
+						<figure class="image is-5by5">
+							<%= attachment_image_tag @service.user, :image, fallback: "no-image.png", class: "image"  %>
+						</figure>
+						<div class="panel-block">
+							<p class="control">
+								Provider：<%= @service.user.name %>
+							</p>
+						</div>
+						<% @user ||= current_user %>
+						<div class="stats-servce-show">
+							<strong id="followers" class="stat">
+								<%= @user.followers.count %>
+							</strong>
+							followers |
+							<strong id="liked" class="liked">
+								<%= @user.likes.count %>
+							</strong>
+							liked
+						</div>
+					</article>
 					</div>
-					<% @user ||= current_user %>
-					<div class="stats-service-show">
-						<strong id="followers" class="stat">
-							<%= @user.followers.count %>：
-						</strong>
-						<%= t('services.follower') %> |
-						<strong id="liked" class="liked">
-							<%= @user.likes.count %>：
-						</strong>
-						<%= t('services.Liked') %>
 					</div>
-				</article>
-			</div>
-		</div>
-	</div>
-</section>
+					</div>
+					</div>
+					</section>
