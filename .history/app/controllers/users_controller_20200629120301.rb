@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   PER = 16
 
     def index
-      @users = User.page(params[:page]).per(PER).order(id: "ASC")
+      @users = User.page(params[:page]).per(PER).order(DESC)
     end
 
     def show
