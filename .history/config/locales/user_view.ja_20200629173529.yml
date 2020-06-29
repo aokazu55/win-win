@@ -28,11 +28,9 @@ ja:
     follow: "フォローする"
     quit_like_list: "お気に入りを外す"
     add_like_list: "お気に入りする"
+
     User_Registration: "新規登録"
     name: "お名前"
     email: "メールアドレス"
-    Sign_Up: "会員登録"
-    Sign_up: "会員登録"
-    Sign_in: "ログイン"
-    Forgot_your_password?: "パスワードを忘れた方はコチラ"
-
+    Sign_Up: "登録する"
+    Log_in: "ログイン"
