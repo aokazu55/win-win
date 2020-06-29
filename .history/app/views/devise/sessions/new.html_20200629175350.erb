@@ -1,11 +1,11 @@
 <div class="action-header">
   <div class="action-name">
-    <p>● <%= t('users.User_Registration') %></p>
+    <p>● <%= t('users.Log_in') %></p>
   </div>
 
   <div class="action-detail">
+    <p>・会員登録時に入力したメールアドレス、パスワードを入力して下さい。</p>
     <p>・出品や購入を行うためには、会員登録およびログインが必要です。</p>
-    <p>・既に会員登録済みの場合は「ログイン」ボタンをクリックして下さい。</p>
   </div>
 </div>
 
@@ -13,20 +13,10 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-5">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-        <div class="field">
-          <%= f.label t('users.name'), class: "label" %>
-          <p class="control has-icons-left">
-            <%= f.text_field :name, autofocus: true, autocomplete: "name", :placeholder => "name", class: "input" %>
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-          </p>
-        </div>
 
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-          <%= f.label t('users.email'), class: "label" %>
+          <%= f.label :email, class: "label" %>
           <p class="control has-icons-left">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "email", class: "input" %>
             <span class="icon is-small is-left">
@@ -37,21 +27,8 @@
 
         <div class="field">
           <%= f.label :password, class: "label" %>
-          <% if @minimum_password_length %>
-          <em>※<%= @minimum_password_length %>文字までご入力下さい。</em>
-          <% end %>
           <p class="control has-icons-left">
-            <%= f.password_field :password, autocomplete: "new-password", :placeholder => "password", class: "input" %>
-            <span class="icon is-small is-left">
-              <i class="fas fa-lock"></i>
-            </span>
-          </p>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation, class: "label" %>
-          <p class="control has-icons-left">
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "password confirmation", class: "input" %>
+            <%= f.password_field :password, autocomplete: "current-password", :placeholder => "password", class: "input" %>
             <span class="icon is-small is-left">
               <i class="fas fa-lock"></i>
             </span>
@@ -59,9 +36,11 @@
         </div>
 
         <div class="actions">
-          <%= f.submit t('users.Sign_Up'), class: "button is-info" %>
+          <%= f.submit t('users.Sign_in'), class: "button is-info" %>
         </div>
         <% end %>
+
+        <%= render "devise/shared/links" %>
 
         <div class="field">
           <button class="btn-default google-login">

@@ -11,7 +11,7 @@ RSpec.describe 'ユーザー登録・ログイン・ログアウト機能' do
 		fill_in 'email', with: 'testman@test.com'
 		fill_in 'password', with: 'testdesu'
 		fill_in 'password_confirmation', with: 'testdesu'
-		click_on '会員登録', match: :first
+		click_on '会員登録'
 	end
 
 		describe 'ユーザー登録テスト' do
@@ -22,7 +22,7 @@ RSpec.describe 'ユーザー登録・ログイン・ログアウト機能' do
 				fill_in 'email', with: 'nobi@test.com'
 				fill_in 'password', with: 'testdesu'
 				fill_in 'user[password_confirmation]', with: 'testdesu'
-				click_on 'ログイン', match: :first
+				click_on 'ログイン'
 				visit new_user_registration_path
 			end
 		end
@@ -33,7 +33,7 @@ RSpec.describe 'ユーザー登録・ログイン・ログアウト機能' do
 			visit new_user_session_path
 			fill_in 'email', with: 'test@test.com'
 			fill_in 'password', with: 'testdesu'
-			click_on "ログイン", match: :first
+			click_on 'Sign_in'
 		end
 
 		context 'ログインした場合' do

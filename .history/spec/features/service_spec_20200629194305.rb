@@ -10,7 +10,7 @@ RSpec.describe 'サービス機能', type: :system do
 				visit new_user_session_path
 				fill_in 'user[email]', with: 'testman@test.com'
 				fill_in 'user[password]', with: "testdesu"
-				click_on 'ログイン', match: :first
+				click_on 'ログイン'
 				visit services_path
 				expect(page).to have_content 'testman'
 				# byebug
@@ -24,11 +24,11 @@ RSpec.describe 'サービス機能', type: :system do
 				visit new_user_session_path
 				fill_in 'user[email]', with: 'testman@test.com'
 				fill_in 'user[password]', with: "testdesu"
-				click_on 'ログイン', match: :first
+				click_on 'ログイン'
 				visit new_service_path
 				# byebug
-				select '教わる', from: 'service[main_service_id]', match: :first
-				select 'アイドル', from: 'service[service_detail_id]', match: :first
+				select '教わる', from: 'service[main_service_id]'
+				select 'アイドル', from: 'service[service_detail_id]'
 				select '日本で5本の指に入る', from: 'service[confidence_level_id]'
 				fill_in 'service[service_name]', with: 'testサービス'
 				fill_in 'service[price]', with: '150'
@@ -69,8 +69,8 @@ RSpec.describe 'サービス機能', type: :system do
 				visit new_user_session_path
 				fill_in 'user[email]', with: 'testman@test.com'
 				fill_in 'user[password]', with: "testdesu"
-				click_on 'ログイン', match: :first
-				click_on 'サービス編集', match: :first
+				click_on 'ログイン'
+				click_on 'サービス編集'
 				select '聞く', from: 'service[main_service_id]'
 				select 'アニメ', from: 'service[service_detail_id]'
 				select 'プロレベル', from: 'service[confidence_level_id]'

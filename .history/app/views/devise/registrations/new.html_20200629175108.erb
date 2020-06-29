@@ -38,7 +38,7 @@
         <div class="field">
           <%= f.label :password, class: "label" %>
           <% if @minimum_password_length %>
-          <em>※<%= @minimum_password_length %>文字までご入力下さい。</em>
+          <em>(<%= @minimum_password_length %> t('users.characters_minimum'))</em>
           <% end %>
           <p class="control has-icons-left">
             <%= f.password_field :password, autocomplete: "new-password", :placeholder => "password", class: "input" %>
