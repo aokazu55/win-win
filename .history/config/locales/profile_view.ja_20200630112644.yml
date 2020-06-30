@@ -1,0 +1,20 @@
+ja:
+  profiles:
+    Registration: "登録"
+    Back: "戻る"
+    Edit_Profile: "プロフィール編集"
+    Profile: "プロフィール"
+    Registration_Profile: "ユーザー編集"
+    Nickname: "ニックネーム"
+    Personality: '性格'
+    SpecialSkill：: "特技"
+    Date_of_Birth: "誕生日"
+    Gender: "性別"
+    Address: "住所"
+    Introduce: "自己紹介"
+    Edit_Profile: 'プロフィール編集'
+    Destroy_Profile: "プロフィール削除"
+    Check_Service: "サービス確認"
+    Edit_Service: "サービス編集"
+    Destroy_Service: "サービス削除"
+    User_Name: "お名前"
