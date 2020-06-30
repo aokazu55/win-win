@@ -5,7 +5,7 @@
 
 	<div class="action-detail">
 		<p>・各サービス情報をクリックし閲覧しましょう。</p>
-		<p>・気になるサービスは「お気に入り」しましょう。</p>
+		<p>・気になるサービスはウォッチリストへ追加しましょう。</p>
 		<p>・出品者へサービスに関する質問が出来ます。</p>
 	</div>
 </div>
@@ -23,10 +23,9 @@
 					<div class="card-content">
 						<div class="media">
 							<div class="panel panel-service">
-								<tr><p class="title is-3 service-title-show">【 <%= @service.main_service_id %> 】</p>
-								<td><p class="title is-5 service-title-show">・<%= @service.service_detail_id %></p></td>
-								<td><p class="title is-6 service-title-show">・<%= @service.service_name %></p></td>
-								</tr>
+								<p class="title is-3 service-title-show">【 <%= @service.main_service_id %> 】</p>
+								<p class="title is-5 service-title-show">・<%= @service.service_detail_id %></p>
+								<p class="title is-6 service-title-show">・<%= @service.service_name %></p>
 							</div>
 						</div>
 						<div class="media">

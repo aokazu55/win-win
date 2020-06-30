@@ -10,5 +10,16 @@
 </div>
 
 <section class="section">
-	<%= render 'services/form' %>
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-6">
+				<%= form_for @service do |f| %>
+					<%= render 'shared/error_messages', object: f.object %>
+					<%= render 'services/form', object: f.object %>
+
+					<%= f.submit t('services.Registration'), class: "button is-info" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </section>
