@@ -1,0 +1,63 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user_image.input {
+	vertical-align: middle;
+}
+
+.stats {
+	overflow: auto;
+	margin-top: 0;
+	padding: 0;
+	a {
+		float: left;
+		padding: 0 10px;
+		border-left: 1px solid;
+		color: gray;
+		&:first-child {
+			padding-left: 0;
+			border: 0;
+		}
+		&:hover {
+			text-decoration: none;
+			color: blue;
+		}
+	}
+	strong {
+	display: block;
+	}
+}
+
+.btn-search {
+	width: 90px;
+	height: 30px;
+	font-weight: bold;
+	color: black;
+	border: none;
+	background-color: rgb(202, 202, 202);
+}
+
+.btn {
+	width: 100px;
+	height: 40px;
+	font-weight: bold;
+	color: black;
+	border: none;
+	background-color: rgb(250, 242, 128);
+}
+
+.btn-form {
+	width: 350px;
+	height: 30px;
+	font-weight: bold;
+	color:black;
+	border: none;
+	background-color: rgb(226, 229, 229);
+}	
+
+.is-5by5 {
+	height: 30%;
+	width: 30%;
+	margin: 20px;
+}

@@ -1,0 +1,83 @@
+<div class="action-header">
+	<div class="action-name">
+		<p class="services-index-header">●　<%= t('services.Services_Index') %></p>
+	</div>
+
+	<div class="action-detail">
+		<p>・閲覧したいサービスをクリックしましょう。</p>
+		<p>・気になるサービスは「お気に入り」登録しましょう。</p>
+	</div>
+</div>
+
+<section class="section">
+	<div class="container">
+		<div class="columns is-multiline">
+			<% @search_services.each do |service| %>
+			<div class="column is-3">
+				<div class="card">
+					<div class="card-image">
+						<figure class="image is-4by4">
+							<%= link_to service_path(service) do %>
+							<%= attachment_image_tag service, :image, fallback: "no-image.png", class: "image"  %>
+							<% end %>
+						</figure>
+					</div>
+					<div class="card-image">
+						<div class="card-image-price">
+							【カテゴリ】<br>
+							<li><%= service.main_service_id %></li>
+						</div>
+						<div class="card-image-price">
+							【ジャンル】<br>
+							<%= service.service_detail_id %>
+						</div>
+					</div>
+
+					<div class="card-image">
+						<div class="card-image-price">
+							<%= link_to service_path(service), style: "color: red;" do %>
+							<%= service.service_name %>
+							<% end %>
+						</div>
+						<div class="card-image-price">
+							<%= service.price.to_s(:delimited, delimiter: ',') %>円
+						</div>
+					</div>
+
+					<div class="card-content">
+						<div class="media">
+							<div class="media-left">
+								<figure class="image is-48x48">
+									<%= attachment_image_tag service.user, :image, fallback: "no-image.png", class: "image" %>
+								</figure>
+							</div>
+
+							<div class="media-content">
+								<div class="middle-content">
+									<%= link_to service.user.name, user_path(service.user) %>
+								</div>
+
+								<div class="small-content">
+									<%= t('services.Time_Required') %>：<%= service.working_time %>
+								</div>
+
+								<div class="ex-small-content">
+									<%= t('services.Provide_Term') %>：<%= service.period_start %>〜
+									<%= service.period_end %>
+								</div>
+							</div>
+						</div>
+
+						<div class="user-index-footer-content">
+							<time>
+								<%= service.updated_at.strftime("%Y-%m-%d %H:%M") %>
+							</time><%= t('services.Update') %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</section>
+<%= paginate @services %>

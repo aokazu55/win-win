@@ -1,0 +1,16 @@
+ja:
+  profiles:
+    Registration: "登録"
+	Registration_Profile: "プロフィール登録"
+    Create_Profile: "プロフィール登録"
+    Back: "戻る"
+    Edit_Profile: "プロフィール編集"
+    Profile: "プロフィール"
+    Profile_Detail: "プロフィール詳細"
+    Nickname: "・ニックネーム"
+    Personality: '・性格'
+    SpecialSkill: "・特技"
+    Date_of_Birth: "・誕生日"
+    Gender: "・性別"
+    Address: "・住所"
+    Introduce: "・自己紹介"

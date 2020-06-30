@@ -1,0 +1,220 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bulma";
+
+.notification:not(:last-child){
+	margin-bottom: 0;
+}
+
+.image {
+	border-radius: 50%;
+}
+
+a {
+	font-weight: bold;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.action-name {
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+.action-detail {
+	font-weight: lighter;
+	font-size: 13px;
+}
+
+.action-option {
+	font-size: 11px;
+}
+
+.google-login  {
+	display: block;
+	width: 100%;
+	line-height: 48px;
+	font-size: 17px;
+	border: 1px solid transparent;
+	-webkit-transition: all ease-out .3s;
+	transition: all ease-out .3s;
+	cursor: pointer;
+	text-align: center;
+	margin: 22px 0;
+	background-color:  #ea352d;
+	color: #f7f3f3;
+}
+.fa-google{
+	color: rgb(255, 255, 255);
+}
+
+.facebook-login  {
+	display: block;
+	width: 100%;
+	line-height: 48px;
+	font-size: 17px;
+	border: 1px solid transparent;
+	-webkit-transition: all ease-out .3s;
+	transition: all ease-out .3s;
+	cursor: pointer;
+	text-align: center;
+	margin: 22px 0;
+	background-color:  #385185;
+	color: white;
+}
+.fa-facebook-official{
+	color:  hsl(210, 33%, 99%);
+}
+
+.big-content {
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	padding: 3px;
+}
+
+.middle-content {
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.small-content {
+	font-size: 14px;
+}
+
+.ex-small-content {
+	font-size: 10px;
+}
+
+.profile-user-name {
+	text-align: center;
+}
+
+.current-user-name {
+	font-weight: bold;
+	text-align: center;
+}
+
+.greeting {
+	font-size: 8px;
+	text-align: center;
+	overflow-wrap: normal;
+	margin: 20px 0;
+}
+
+.media-service-name {
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	margin: 10px;
+	color: rgb(230, 26, 26);
+}
+
+.media-service-price {
+	font-size: 19px;
+	font-weight: bold;
+	text-align: center;
+	margin: 7px 0;
+	color: rgb(230, 26, 26);
+}
+
+.card-image-price {
+	font-size: 18px;
+	font-weight: bold;  
+	text-align: center;
+	margin: 10px 20px;
+	color: rgb(19, 19, 153);
+}
+
+.panel-icon {
+	font-size: 10px;
+}
+
+.content-update {
+	text-align: center;
+	font-size: 9px;
+}
+
+.service-index-price {
+	font-size: 2px;
+	font-weight: bold;  
+	text-align: center;
+	margin: 5px 0;
+}
+
+.user-index-footer-content {
+	font-size: 4px;
+	text-align: center;
+}
+
+
+.search-content {
+	padding: 5px 15px;
+	width: 100%;
+	color: #000080;
+	vertical-align: middle;
+}
+
+.services-index-header {
+	padding-top: 15px;
+}
+
+.navbar-item {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.notification {
+	font-weight: bold;
+	background-color: rgb(175, 170, 170);
+	color: white;
+}
+
+.pagination {
+	display: inline-block;
+	padding-left: 30px;
+}
+
+.pagination a {
+	color: white;
+	padding: 8px 22px;
+	text-decoration: none;
+	background-color: rgb(175, 170, 170);
+	border: 1px solid #ddd;
+
+}
+
+.pagination a:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.pagination a:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+@charset "utf-8";
+p {
+	color: rgb(6, 6, 112);
+}
+
+ul {
+	color: rgb(153, 153, 250);
+	font-size: small;
+	font-weight: lighter;
+}

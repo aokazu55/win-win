@@ -1,0 +1,19 @@
+<div class="panel-block">
+	<% if @service.user != current_user %>
+		<% if @like.present? %>
+		<%= link_to t('users.quit_like_list'), like_path(id: @like.id), method: :delete, class: "button btn-like", style: "background-color:#ca4837; color:white; border: none;" %>
+	<% else %>
+		<%= link_to t('users.add_like_list'), likes_path(service_id: @service.id), method: :post, class: "button btn-like", style: "background-colorrgb(250, 242, 128); color:black; border: none;" %>
+		<% end %>
+	<% end %>
+</div>
+	<% if @user_signed_in %>
+<div class="panel-block">
+	<p class="like-user">サービスフォロワー：</p>
+	<p class="like-user-name">
+		<% @likes.each do |like| %>
+		<%= like.name %>
+		<% end %>
+	<% end %>
+	</p>
+</div>

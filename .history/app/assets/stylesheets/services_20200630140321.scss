@@ -1,0 +1,86 @@
+// Place all the styles related to the services controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.fa-heart {
+	color: rgb(253, 119, 56);
+}
+
+.search-warning {
+	text-align: left;
+}
+
+.search-content {
+	vertical-align: middle;
+}
+
+#q_sorts {
+	height: 23px;
+	color: rgb(77, 77, 77);
+}
+
+.watch-list-header {
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	color: blue($color: #143192);
+	margin: 5px 15px;
+}
+
+.like-user-name {
+	color: blue($color: #fdf075);
+	margin: 5px 15px;
+}
+
+.stats-service-show {
+	color: red($color: #f595f8);
+	margin: 5px 25px;	
+}
+
+.show-user-info {
+	text-align: center;
+}
+.menu-label {
+	text-align: center;
+}
+
+.current-user-name {
+	margin-bottom: 20px;
+}
+
+.panel-heading {
+	text-align: center;
+	background-color: #cde7f3;
+	font-size: 2rem;
+}
+
+.panel-service {
+	background-color: rgb(253, 209, 240);
+	padding: 8px 25px;
+	width: 100%;
+	// text-align: center;
+}
+
+.panel-price {
+	background-color: rgb(236, 236, 233);
+	padding: 8px 25px;
+	width: 100%;
+	text-align: center;
+}
+
+.service-title-show {
+	color: rgb(255, 255, 255);
+}
+
+.service-title {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.genre {
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	padding: 3px;
+}
+
