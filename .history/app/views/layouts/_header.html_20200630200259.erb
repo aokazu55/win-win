@@ -1,0 +1,102 @@
+<header class="navbar">
+	<nav class="navbar" role="navigation" aria-label="main navigation"></nav>
+	<div class="navbar-brand">
+		<div class="navbar-item">
+			<%= link_to root_path, class: "navbar-item" do %>
+			<h1 class="title is-3" style="font-family: cursive;">win-win!!!!!</h1>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="navbar-item">
+		<div class="nabvar-search">
+			<%= search_form_for @search, url: services_path do |f| %>
+			<%= f.label t('services.Main_Keyword') %>
+			<%= f.text_field :main_service_id_cont, placeholder: 'カテゴリ検索' %>
+			<%= f.label t('services.Sub_Keyword') %>
+			<%= f.text_field :service_detail_id_cont, placeholder: 'ジャンル検索' %>
+			<%= f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc',
+	                                      '出品の新しい順': 'updated_at desc' }, { onchange: 'this.form.submit()'} ) %>
+			<%= f.submit class: 'btn-search' %>
+			<% end %>
+		</div>
+	</div>
+
+	<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+		data-target="navbarBasicExample">
+		<span aria-hidden="true"></span>
+		<span aria-hidden="true"></span>
+		<span aria-hidden="true"></span>
+	</a>
+
+	<header id="header">
+		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+						data-target="#navbarEexample">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/practice_diaries">RUNNER'S PLACE</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarEexample">
+					<ul class="nav navbar-nav">
+						<% if user_signed_in? %>
+						<li><%= link_to "記録を見る", "#" %></li>
+						<li><%= link_to "記録をつける", "#" %></li>
+						<li><%= link_to "みんなの記録", "#" %></li>
+						<li><%= link_to "イベントを登録する", "#" %></li>
+						<li><%= link_to "イベントを探す", "#" %></li>
+						<li><%= link_to "プロフィール", "#" %></li>
+						<% if current_user.admin? %>
+						<li><%= link_to "ユーザー管理", "#" %></li>
+						<% end %>
+						<li><%= link_to "ログアウト", "#", method: :delete %></li>
+					</ul>
+					<p class="navbar-text navbar-right">ようこそ、<%= current_user.user_name %>さん！　</p>
+					<% else %>
+					<li><%= link_to "新規登録", "#" %></li>
+					<li><%= link_to "ログイン", "#" %></li>
+					<li><%= link_to "ゲストログイン", "#", method: :post %></li>
+					<% end %>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+	<% if user_signed_in? %>
+	<div id="navbarBasicExample" class="navbar-menu">
+		<div class="navbar-start">
+			<div class="navbar-item">
+				<%= link_to "サービス投稿", new_service_path, method: :get, class: "button is-info is-rounded" %>
+			</div>
+
+			<div class="navbar-item">
+				<%= link_to "マイページ", user_path(current_user), class: "button is-info is-rounded" %>
+			</div>
+		</div>
+
+		<div class="navbar-end">
+			<div class="navbar-item">
+				<%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-info is-rounded" %>
+			</div>
+		</div>
+	</div>
+
+	<% else %>
+	<div id="navbarBasicExample" class="navbar-menu">
+		<div class="navbar-item">
+			<%= link_to "ログイン", new_user_session_path, class: "button is-info is-rounded" %>
+		</div>
+
+		<div class="navbar-item">
+			<%= link_to "新規登録", new_user_registration_path, class: "button is-info is-rounded" %>
+		</div>
+	</div>
+	<% end %>
+	</nav>
+</header>
